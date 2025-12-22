@@ -1,0 +1,76 @@
+﻿@model IEnumerable<EmployeeManagement.Models.Empdata>
+
+@{
+    ViewData["Title"] = "Emp_Dashboard";
+}
+
+<h1>Emplyoee Dashboard</h1>
+
+<p>
+    <a asp-action="Add_Empdata">Create New</a>
+</p>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            
+            <th>
+                First Name
+            </th>
+            <th>
+                Last Name
+            </th>
+            <th>
+                Email Id
+            </th>
+            <th>
+				Phone No
+            </th>
+            <th>
+				Position
+            </th>
+            <th>
+				Department
+         </th>
+            <th>
+
+				Salary
+            </th>
+            <th>Edit / Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.Emp_FristName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Emp_LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Emp_EmailId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Emp_PhoneNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Emp_Position)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Emp_Dept)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Emp_Salary)
+            </td>
+                
+            <td>
+                    <a asp-controller="Dashboard" asp-action="Edit_Empdata" asp-route-id="@item.EmpId">Edit</a> /
+                    <a asp-controller="Dashboard" asp-action="Delete_Empdata" asp-route-id="@item.EmpId">Delete</a> 
+
+                
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

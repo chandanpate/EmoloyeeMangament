@@ -1,0 +1,62 @@
+﻿@model EmployeeManagement.Models.Empdata
+
+@{
+    ViewData["Title"] = "Delete_Empdata";
+}
+
+<h1>Delete_Empdata</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Empdata</h4>
+    <hr />
+    <dl class="row">
+       
+        <dt class = "col-sm-2">
+            Emolyoee First Name
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Emp_FristName)
+        </dd>
+        <dt class = "col-sm-2">
+            Emolyoee Last Name
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Emp_LastName)
+        </dd>
+        <dt class = "col-sm-2">
+            Emolyoee Email Id
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Emp_EmailId)
+        </dd>
+        <dt class = "col-sm-2">
+            Emolyoee Phone
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Emp_PhoneNo)
+        </dd>
+        <dt class = "col-sm-2">
+            Emolyoee Position
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Emp_Position)
+        </dd>
+        <dt class = "col-sm-2">
+            Emolyoee Dept
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Emp_Dept)
+        </dd>
+        <dt class = "col-sm-2">
+            Emolyoee Salary
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Emp_Salary)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete_Empdata">
+        <input type="submit" value="Delete" class="btn btn-danger" /> 
+    </form>
+</div>

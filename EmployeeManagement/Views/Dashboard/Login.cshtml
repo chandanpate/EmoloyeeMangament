@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewData["Title"] = "Login";
+}
+@model EmployeeManagement.Models.LoginModel
+<h1>Login</h1>
+
+
+<form asp-action="Logindata" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div>
+        <label>Username</label><br />
+        <input asp-for="Username" />
+        <span asp-validation-for="Username" class="text-danger"></span>
+
+    </div>
+
+    <div>
+        <label>Password</label><br />
+        <input asp-for="Password" type="password" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+
+    </div>
+
+    <button type="submit" style="margin-top: 10px;">Login</button>
+
+</form>
