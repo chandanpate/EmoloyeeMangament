@@ -8,11 +8,11 @@
 
 <form asp-action="Logindata" method="post">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
+    @* <label style="color:red">@ViewBag.Massage</label> *@
     <div>
         <label>Username</label><br />
-        <input asp-for="Username" />
-        <span asp-validation-for="Username" class="text-danger"></span>
+        <input asp-for="UserId" />
+        <span asp-validation-for="Password" class="text-danger"></span>
 
     </div>
 
@@ -26,3 +26,6 @@
     <button type="submit" style="margin-top: 10px;">Login</button>
 
 </form>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

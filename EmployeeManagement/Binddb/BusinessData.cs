@@ -10,5 +10,6 @@ namespace EmployeeManagement.Binddb
                
         }
         public DbSet<Empdata> Empdata { get; set; }
+        public DbSet<LoginModel> loginmodels { get; set; }
     }
 }

@@ -27,6 +27,17 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
                     </ul>
+                    @if (Context.Session.GetString("IsAuthenticated") == "true")
+                    {
+                        <form asp-controller="Dashboard" asp-action="Logout" method="post" style="display:inline">
+                            @Html.AntiForgeryToken()
+                            <button type="submit" class="btn btn-link">Logout</button>
+                        </form>
+                    }
+                    else
+                    {
+                        <a asp-controller="Dashboard" asp-action="Login">Login</a>
+                    }
                 </div>
             </div>
         </nav>
